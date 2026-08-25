@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Caleb Widner" />
+    <meta
+      name="description"
+      content="A landing page for a flashcard application"
+    />
+    <meta
+      name="keywords"
+      content="study aids, flashcards, learning materials"
+    />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="assets/vendor/normalize.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Landing Page</title>
+    <script src="./assets/js/index.js" type="module"></script>
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__title">
+        <a class="header__link" href="#home">Flash Cards</a>
+      </h1>
+
+      <nav>
+        <ul class="nav__links">
+          <li><a class="nav__link" href="#home">My Decks</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page__main-content">
+      <section id="home" class="decks">
+        <h2 class="decks__title">My Decks</h2>
+        <div class="decks__wrapper">
+          <ul class="decks__list decks__wrapper-contents"></ul>
+          <template id="deck-template">
+            <li class="deck deck_color_green">
+              <a href="#" class="deck__link"></a>
+              <h3 class="deck__title"></h3>
+              <div class="deck__row">
+                <p class="deck__count"></p>
+                <button
+                  type="button"
+                  aria-label="Delete button"
+                  class="deck__delete-btn"
+                >
+                  <img src="assets/images/delete.svg" alt="" />
+                </button>
+              </div>
+            </li>
+          </template>
+
+          <button
+            type="button"
+            aria-label="New deck button"
+            class="decks__new-deck-btn"
+          >
+            + New Deck
+          </button>
+        </div>
+      </section>
+
+      <section id="carousel" class="carousel">
+        <h2 class="carousel__title"></h2>
+
+        <div class="carousel__row">
+          <button
+            type="button"
+            aria-label="Go to previous card in deck"
+            class="carousel__btn carousel__btn_type_left"
+          ></button>
+
+          <div class="carousel__card">
+            <h3 class="carousel__card-text"></h3>
+          </div>
+
+          <button
+            type="button"
+            aria-label="Go to next card in deck"
+            class="carousel__btn carousel__btn_type_right"
+          ></button>
+        </div>
+
+        <button
+          type="button"
+          aria-label="Flip current card in deck"
+          class="carousel__btn carousel__btn_type_flip"
+        ></button>
+      </section>
+
+      <section id="not-found" class="not-found">
+        <h2 class="not-found__status-code">404</h2>
+        <p class="not-found__text">Sorry, nothing found!</p>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">&copy;2026 Caleb Widner</p>
+    </footer>
+  </body>
+</html>
