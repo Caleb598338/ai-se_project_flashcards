@@ -18,3 +18,7 @@ each of which can be viewed in a carousel.
 - HTML
 - CSS
 - Vanilla JavaScript
+
+## Deployed Site
+
+Check out this flash card web application at https://caleb598338.github.io/ai-se_project_flashcards/ on GitHub Pages.
