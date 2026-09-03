@@ -64,7 +64,6 @@
   border: none;
 }
 
-.gallery__new-deck-btn:hover,
 .gallery__new-card-btn:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
