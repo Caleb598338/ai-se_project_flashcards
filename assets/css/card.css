@@ -32,6 +32,13 @@
   align-items: center;
 }
 
+.card__count {
+  margin: 20px 0 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
 .card_type_flashcard {
   justify-content: center;
   align-items: center;

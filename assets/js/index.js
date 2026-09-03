@@ -25,15 +25,11 @@ function createDeckEl(item) {
   const deckEl = clone.querySelector(".card");
   removeColorClasses(deckEl);
   deckEl.classList.add(`card_color_${colorName}`);
-  const countEl = clone.querySelector(".card__count-btn");
+  const countEl = clone.querySelector(".card__count");
   countEl.textContent = `${item.cards.length} cards`;
-  countEl.addEventListener("click", () => {
-    currentDeck = item;
-    window.location.hash = `#deck/${item.id}`;
-  });
   const deckLink = clone.querySelector(".card__link");
-  deckLink.href = `#carousel/${item.id}`;
-  deckLink.setAttribute("aria-label", `Practice ${item.name}`);
+  deckLink.href = `#deck/${item.id}`;
+  deckLink.setAttribute("aria-label", `Open ${item.name}`);
 
   const deleteBtn = clone.querySelector(".card__delete-btn");
   deleteBtn.addEventListener("click", () => {
