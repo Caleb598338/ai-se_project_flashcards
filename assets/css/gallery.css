@@ -1,3 +1,35 @@
+.gallery__title {
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0 0 40px;
+}
+
+.gallery__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.gallery__header .gallery__title {
+  margin-bottom: 0;
+}
+
+.gallery__practice-button {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #1a1a1a;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.gallery__practice-button:hover {
+  background-color: #3a3a3a;
+}
+
 .gallery__wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -14,6 +46,7 @@
   list-style-type: none;
 }
 
+.gallery__new-deck-btn,
 .gallery__new-card-btn {
   max-width: 325px;
   width: 100%;
@@ -32,6 +65,7 @@
   border: none;
 }
 
+.gallery__new-deck-btn:hover,
 .gallery__new-card-btn:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;

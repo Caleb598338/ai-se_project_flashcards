@@ -3,7 +3,8 @@ import { hexToString, removeColorClasses } from "./colors.js";
 let currentIndex = 0;
 let showingQuestion = true;
 
-const homeSection = document.querySelector("#home");
+const decksSection = document.querySelector("#home");
+const deckViewSection = document.querySelector("#deck-view");
 const carouselSection = document.querySelector("#carousel");
 const notFoundSection = document.querySelector("#not-found");
 
@@ -26,7 +27,8 @@ function updateDisplay(deck) {
 }
 
 function renderCarouselView(deck) {
-  homeSection.style.display = "none";
+  decksSection.style.display = "none";
+  deckViewSection.style.display = "none";
   carouselSection.style.display = "block";
   notFoundSection.style.display = "none";
 

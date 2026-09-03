@@ -12,6 +12,11 @@
   box-sizing: border-box;
 }
 
+.page__main-content {
+  margin-top: 60px;
+  flex-grow: 1;
+}
+
 .page__main-content_location_carousel {
   margin-top: 106px;
 }

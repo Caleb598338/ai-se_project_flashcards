@@ -47,7 +47,53 @@
               <a href="#" class="card__link"></a>
               <h3 class="card__title"></h3>
               <div class="card__row">
-                <p class="card__count"></p>
+                <button
+                  type="button"
+                  aria-label="Deck card count button"
+                  class="card__count-btn"
+                ></button>
+                <button
+                  type="button"
+                  aria-label="Delete deck button"
+                  class="card__delete-btn"
+                >
+                  <img src="assets/images/delete.svg" alt="" />
+                </button>
+              </div>
+            </li>
+          </template>
+          <button
+            type="button"
+            aria-label="New deck button"
+            class="gallery__new-deck-btn"
+          >
+            + New Deck
+          </button>
+        </div>
+      </section>
+
+      <section id="deck-view" class="gallery">
+        <div class="gallery__header">
+          <h2 class="gallery__title"></h2>
+          <button
+            type="button"
+            aria-label="Practice button"
+            class="gallery__practice-button"
+          >
+            Practice
+          </button>
+        </div>
+        <div class="gallery__wrapper">
+          <ul class="gallery__list gallery__wrapper-contents"></ul>
+          <template id="card-template">
+            <li class="card card_color_green">
+              <h3 class="card__title"></h3>
+              <div class="card__row">
+                <button
+                  type="button"
+                  aria-label="Flip card button"
+                  class="card__count-btn"
+                ></button>
                 <button
                   type="button"
                   aria-label="Delete button"
@@ -61,10 +107,10 @@
 
           <button
             type="button"
-            aria-label="New deck button"
+            aria-label="New card button"
             class="gallery__new-card-btn"
           >
-            + New Deck
+            + New Card
           </button>
         </div>
       </section>
