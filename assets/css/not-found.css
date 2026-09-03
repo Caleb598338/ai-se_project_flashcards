@@ -1,0 +1,20 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found__status-code {
+  font-size: 96px;
+  font-weight: 900;
+  margin: 0;
+  text-align: center;
+}
+
+.not-found__text {
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
