@@ -1,7 +1,7 @@
 @import url(../vendor/normalize.css);
 @import url("./header.css");
-@import url("./decks.css");
-@import url(./deck.css);
+@import url("./gallery.css");
+@import url(./card.css);
 @import url(./carousel.css);
 @import url(./not-found.css);
 @import url(./page.css);

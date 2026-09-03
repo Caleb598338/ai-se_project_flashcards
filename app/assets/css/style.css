@@ -64,30 +64,30 @@
 
 /*Decks Section*/
 
-.decks__title {
+.gallery__title {
   font-weight: 700;
   font-size: 40px;
   margin-bottom: 40px;
   margin-top: 0;
 }
 
-.decks__wrapper {
+.gallery__wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px 20px;
 }
 
-.decks__wrapper-contents {
+.gallery__wrapper-contents {
   display: contents;
 }
 
-.decks__list {
+.gallery__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-.decks__new-deck-btn {
+.gallery__new-card-btn {
   max-width: 325px;
   width: 100%;
   height: 205px;
@@ -105,14 +105,14 @@
   border: none;
 }
 
-.decks__new-deck-btn:hover {
+.gallery__new-card-btn:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
 }
 
 /*Deck Stacks*/
 
-.deck {
+.card {
   background-color: #64d583;
   max-width: 325px;
   width: 100%;
@@ -126,13 +126,13 @@
   position: relative;
 }
 
-.deck__link {
+.card__link {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-.deck__title {
+.card__title {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
@@ -140,13 +140,13 @@
   margin-bottom: 30px;
 }
 
-.deck__row {
+.card__row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.deck__count {
+.card__count {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.2;
@@ -154,7 +154,7 @@
   margin-bottom: 0;
 }
 
-.deck__delete-btn {
+.card__delete-btn {
   height: 24px;
   width: 24px;
   padding: 0;
@@ -163,36 +163,37 @@
   background-color: transparent;
   opacity: 50%;
   cursor: pointer;
+  position: relative;
   z-index: 2;
 }
 
-.deck__delete-btn:hover {
+.card__delete-btn:hover {
   opacity: 100%;
 }
 
 /*Deck Colors*/
 
-.deck_color_green {
+.card_color_green {
   background-color: #64d583;
 }
 
-.deck_color_blue {
+.card_color_blue {
   background-color: #91a8f9;
 }
 
-.deck_color_pink {
+.card_color_pink {
   background-color: #ee92d7;
 }
 
-.deck_color_purple {
+.card_color_purple {
   background-color: #aa8ef0;
 }
 
-.deck_color_orange {
+.card_color_orange {
   background-color: #ee955e;
 }
 
-.deck_color_yellow {
+.card_color_yellow {
   background-color: #f5d770;
 }
 

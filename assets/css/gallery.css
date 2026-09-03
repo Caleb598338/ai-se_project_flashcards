@@ -1,20 +1,20 @@
-.decks__wrapper {
+.gallery__wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.decks__wrapper-contents {
+.gallery__wrapper-contents {
   display: contents;
 }
 
-.decks__list {
+.gallery__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-.decks__new-deck-btn {
+.gallery__new-card-btn {
   max-width: 325px;
   width: 100%;
   height: 205px;
@@ -32,7 +32,7 @@
   border: none;
 }
 
-.decks__new-deck-btn:hover {
+.gallery__new-card-btn:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
 }

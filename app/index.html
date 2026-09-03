@@ -39,20 +39,20 @@
     </header>
 
     <main class="page__main-content">
-      <section id="home" class="decks">
-        <h2 class="decks__title">My Decks</h2>
-        <div class="decks__wrapper">
-          <ul class="decks__list decks__wrapper-contents"></ul>
+      <section id="home" class="gallery">
+        <h2 class="gallery__title">My Decks</h2>
+        <div class="gallery__wrapper">
+          <ul class="gallery__list gallery__wrapper-contents"></ul>
           <template id="deck-template">
-            <li class="deck deck_color_green">
-              <a href="#" class="deck__link"></a>
-              <h3 class="deck__title"></h3>
-              <div class="deck__row">
-                <p class="deck__count"></p>
+            <li class="card card_color_green">
+              <a href="#" class="card__link"></a>
+              <h3 class="card__title"></h3>
+              <div class="card__row">
+                <p class="card__count"></p>
                 <button
                   type="button"
                   aria-label="Delete button"
-                  class="deck__delete-btn"
+                  class="card__delete-btn"
                 >
                   <img src="assets/images/delete.svg" alt="" />
                 </button>
@@ -63,7 +63,7 @@
           <button
             type="button"
             aria-label="New deck button"
-            class="decks__new-deck-btn"
+            class="gallery__new-card-btn"
           >
             + New Deck
           </button>
