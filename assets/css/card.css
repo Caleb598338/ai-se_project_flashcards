@@ -80,6 +80,7 @@
   background-image: url("../images/flip.svg");
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 0;
 }
 
 .card__delete-btn {
@@ -92,7 +93,7 @@
   opacity: 50%;
   cursor: pointer;
   position: relative;
-  z-index: 2;
+  z-index: 0;
 }
 
 .card__delete-btn:hover {
