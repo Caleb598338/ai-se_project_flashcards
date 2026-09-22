@@ -19,6 +19,10 @@
 
 .page__main-content_location_carousel {
   margin-top: 106px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer__text {
@@ -31,6 +35,9 @@
 @media screen and (max-width: 600px) {
   .page__main-content {
     margin-top: 42px;
+  }
+  .page__main-content_location_carousel {
+    margin-top: 0;
   }
   .page {
     padding-left: 20px;

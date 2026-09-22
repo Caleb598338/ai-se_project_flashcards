@@ -13,6 +13,7 @@ each of which can be viewed in a carousel, and a gallery view of all of the card
 - Gallery view of all the cards in a given deck.
 - Seeing which card you're on out of the total.
 - Card flipping to see the back of the cards.
+- Responsive design.
 
 ## Technologies used
 
