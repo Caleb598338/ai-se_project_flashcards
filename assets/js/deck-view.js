@@ -28,6 +28,10 @@ function createCardEl(card, deck) {
   });
 
   deleteBtn.addEventListener("click", () => {
+    const index = deck.cards.findIndex((c) => c.id === card.id);
+    if (index !== -1) {
+      deck.cards.splice(index, 1);
+    }
     cardEl.remove();
   });
 

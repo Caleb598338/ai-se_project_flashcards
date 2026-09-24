@@ -33,6 +33,10 @@ function createDeckEl(item) {
 
   const deleteBtn = clone.querySelector(".card__delete-btn");
   deleteBtn.addEventListener("click", () => {
+    const index = decks.findIndex((deck) => deck.id === item.id);
+    if (index !== -1) {
+      decks.splice(index, 1);
+    }
     deckEl.remove();
   });
 
