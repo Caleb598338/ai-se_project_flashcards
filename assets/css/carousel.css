@@ -7,7 +7,7 @@
 }
 
 .carousel__title {
-  margin: 0;
+  margin: 0 0 32px;
   font-weight: 500;
   font-size: 14px;
   color: #1a1a1a80;
@@ -17,15 +17,7 @@
 
 .carousel__grid {
   display: grid;
-  grid-template-areas:
-    "card card card"
-    "left flip right";
-  grid-template-columns: 44px 1fr 44px;
-  width: 100%;
-  max-width: 440px;
-  margin: 0 auto;
-  padding: 0 12px;
-  box-sizing: border-box;
+  grid-template-areas: "left card right" ".flip.";
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -104,9 +96,10 @@
 
 .carousel__card {
   width: 100%;
-  aspect-ratio: 1 / 1.1;
+  aspect-ratio: 22 / 15;
   background-color: #64d583;
-  margin: 32px 0 0;
+  max-width: 440px;
+  padding: 20px;
   border-radius: 20px;
   display: flex;
   justify-content: center;

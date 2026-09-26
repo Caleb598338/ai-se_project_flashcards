@@ -46,7 +46,7 @@
 
 .gallery__new-card-btn {
   width: 100%;
-  aspect-ratio: 353 / 205;
+  aspect-ratio: 65 / 41;
   font-weight: 700;
   font-size: 24px;
   line-height: 1.2;
@@ -54,8 +54,7 @@
   background-color: #d9d9d9;
   display: flex;
   align-items: flex-start;
-  padding-top: 20px;
-  padding-left: 20px;
+  padding: 20px;
   border-radius: 20px;
   cursor: pointer;
   border: none;
@@ -72,5 +71,11 @@
     font-weight: 700;
     line-height: 100%;
     letter-spacing: 0%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .gallery__wrapper {
+    grid-template-columns: repeat(auto-fill, 325px);
   }
 }
