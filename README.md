@@ -24,3 +24,8 @@ each of which can be viewed in a carousel, and a gallery view of all of the card
 ## Deployed Site
 
 Check out this flash card web application at https://caleb598338.github.io/ai-se_project_flashcards/ on GitHub Pages.
+
+ ## Project Pitch Video
+ 
+ Check out Caleb_Widner_ProjectPitch_Flashcard_Application at https://drive.google.com/file/d/1k3K3ngnnvyzp7NL7SPEN4_NT9WtJMZSQ/view?usp=drive_link, where I describe my 
+ project and some challenges I faced while building it.
