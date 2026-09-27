@@ -18,6 +18,8 @@
 .carousel__grid {
   display: grid;
   grid-template-areas: "left card right" ".flip.";
+  grid-template-columns: auto minmax(0, 440px) auto;
+  width: 100%;
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -96,6 +98,7 @@
 
 .carousel__card {
   width: 100%;
+  overflow: auto;
   aspect-ratio: 22 / 15;
   background-color: #64d583;
   max-width: 440px;
@@ -117,6 +120,8 @@
   font-size: 32px;
   margin: 0;
   text-align: center;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .carousel__card_color_green {
