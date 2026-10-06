@@ -29,7 +29,7 @@ function updateDisplay(deck) {
 function renderCarouselView(deck) {
   decksSection.style.display = "none";
   deckViewSection.style.display = "none";
-  carouselSection.style.display = "block";
+  carouselSection.style.display = "grid";
   notFoundSection.style.display = "none";
 
   const pageMainContent = document.querySelector(".page__main-content");
