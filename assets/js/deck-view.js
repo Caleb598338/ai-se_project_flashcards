@@ -13,6 +13,7 @@ function createCardEl(card, deck) {
   const flipBtn = clone.querySelector(".card__count-btn");
   const deleteBtn = clone.querySelector(".card__delete-btn");
   const colorName = hexToString(deck.color);
+
   let showingQuestion = true;
 
   removeColorClasses(cardEl);

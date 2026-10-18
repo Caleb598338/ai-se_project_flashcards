@@ -2,9 +2,11 @@ import { decks, getDeckByID } from "./decks.js";
 import { hexToString, removeColorClasses } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
 import { renderDeckView } from "./deck-view.js";
+import { renderNewDeckView } from "./new-deck-section.js";
 
 const decksSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
+const newDeckSection = document.querySelector("#new-deck-view");
 const carouselSection = document.querySelector("#carousel");
 const notFoundSection = document.querySelector("#not-found");
 const practiceBtn = document.querySelector(".gallery__practice-button");
@@ -52,6 +54,7 @@ function renderDeckEl(item) {
 function renderDecksView() {
   decksSection.style.display = "block";
   deckViewSection.style.display = "none";
+  newDeckSection.style.display = "none";
   carouselSection.style.display = "none";
   notFoundSection.style.display = "none";
 
@@ -67,6 +70,7 @@ function renderDecksView() {
 function renderNotFoundView() {
   decksSection.style.display = "none";
   deckViewSection.style.display = "none";
+  newDeckSection.style.display = "none";
   carouselSection.style.display = "none";
   notFoundSection.style.display = "flex";
 
@@ -95,6 +99,8 @@ function router() {
     } else {
       renderNotFoundView();
     }
+  } else if (view === "new-deck-section") {
+    renderNewDeckView();
   } else if (view === "about") {
     renderNotFoundView();
   } else {
