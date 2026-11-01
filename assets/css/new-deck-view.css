@@ -114,8 +114,14 @@
   height: 44px;
   width: 172px;
   margin-top: 32px;
-  background-color: #1a1a1a;
   opacity: 30%;
+  background-color: #1a1a1a;
   color: #ffffff;
   border: none;
+  cursor: pointer;
+}
+
+.new-deck-view__form:has(textarea:not(:placeholder-shown))
+  .new-deck-view__submit-btn {
+  opacity: 100%;
 }
