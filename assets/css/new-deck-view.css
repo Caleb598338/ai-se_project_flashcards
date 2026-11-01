@@ -1,0 +1,121 @@
+.new-deck-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-deck-view__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 630px;
+  margin: 0 auto;
+}
+
+.new-deck-view__title {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: bold;
+  margin: 0;
+  padding-bottom: 32px;
+}
+
+.new-deck-view__form {
+  border-radius: 12px;
+  border: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  gap: 12px;
+}
+
+.new-deck-view__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.new-deck-view__color-picker {
+  border: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.new-deck-view__legend {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: medium;
+  line-height: 135%;
+  padding-bottom: 12px;
+}
+
+.new-deck-view__colors-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.new-deck-view__color-input {
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.new-deck-view__color-input:checked {
+  border: 2px solid rgb(0 0 0 / 0.2);
+}
+
+.new-deck-view__color-input_color_green {
+  background-color: #64d583;
+}
+
+.new-deck-view__color-input_color_blue {
+  background-color: #91a8f9;
+}
+
+.new-deck-view__color-input_color_purple {
+  background-color: #aa8ef0;
+}
+
+.new-deck-view__color-input_color_pink {
+  background-color: #ee92d7;
+}
+
+.new-deck-view__color-input_color_orange {
+  background-color: #ee955e;
+}
+
+.new-deck-view__color-input_color_yellow {
+  background-color: #f5d770;
+}
+
+.new-deck-view__json-label {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: medium;
+  line-height: 135%;
+  padding-top: 32px;
+}
+
+.new-deck-view__json-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.new-deck-view__submit-btn {
+  border-radius: 8px;
+  height: 44px;
+  width: 172px;
+  margin-top: 32px;
+  background-color: #1a1a1a;
+  opacity: 30%;
+  color: #ffffff;
+  border: none;
+}
