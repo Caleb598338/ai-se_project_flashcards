@@ -66,4 +66,7 @@
     bottom: 0;
     z-index: 3;
   }
+  .page:has(#new-deck-view[style*="display: flex"])::after {
+    display: none;
+  }
 }
