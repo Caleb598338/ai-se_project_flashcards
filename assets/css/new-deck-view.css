@@ -30,7 +30,7 @@
   align-items: stretch;
   margin: 0;
   padding: 0;
-  gap: 12px;
+  gap: 0;
 }
 
 .new-deck-view__form {
@@ -109,6 +109,7 @@
   box-sizing: border-box;
   border-radius: 8px;
   border: 1px;
+  margin-top: 12px;
 }
 
 .new-deck-view__submit-btn {
