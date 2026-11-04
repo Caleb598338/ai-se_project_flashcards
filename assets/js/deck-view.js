@@ -2,6 +2,7 @@ import { hexToString, removeColorClasses } from "./colors.js";
 
 const deckViewSection = document.querySelector("#deck-view");
 const decksSection = document.querySelector("#home");
+const newDeckSection = document.querySelector("#new-deck-view");
 const carouselSection = document.querySelector("#carousel");
 const notFoundSection = document.querySelector("#not-found");
 
@@ -42,6 +43,7 @@ function createCardEl(card, deck) {
 function renderDeckView(deck) {
   decksSection.style.display = "none";
   deckViewSection.style.display = "block";
+  newDeckSection.style.display = "none";
   carouselSection.style.display = "none";
   notFoundSection.style.display = "none";
 

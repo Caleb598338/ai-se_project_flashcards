@@ -2,7 +2,7 @@ import { decks, getDeckByID } from "./decks.js";
 import { hexToString, removeColorClasses } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
 import { renderDeckView } from "./deck-view.js";
-import { renderNewDeckView } from "./new-deck-section.js";
+import { renderNewDeckView, disableSubmitBtn } from "./new-deck-view.js";
 
 const decksSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
@@ -99,8 +99,9 @@ function router() {
     } else {
       renderNotFoundView();
     }
-  } else if (view === "new-deck-section") {
+  } else if (view === "new-deck-view") {
     renderNewDeckView();
+    disableSubmitBtn();
   } else if (view === "about") {
     renderNotFoundView();
   } else {
