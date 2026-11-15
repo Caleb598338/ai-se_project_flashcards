@@ -9,9 +9,16 @@ const newDeckBtn = document.querySelector("#home .gallery__new-card-btn");
 const form = document.querySelector(".new-deck-view__form");
 const submitBtn = document.querySelector(".new-deck-view__submit-btn");
 const textarea = document.querySelector(".new-deck-view__json-input");
+const errorModal = document.querySelector("#error-modal");
+const errorCloseBtn = errorModal.querySelector(".modal__close-btn");
+const errorMessageEl = errorModal.querySelector(".modal__error");
 
 newDeckBtn.addEventListener("click", () => {
   window.location.hash = "new-deck-view";
+});
+
+errorCloseBtn.addEventListener("click", () => {
+  errorModal.classList.remove("modal_visible");
 });
 
 function renderNewDeckView() {
@@ -59,14 +66,69 @@ function normalizeColor(color) {
   return "#" + hex.toLowerCase();
 }
 
+function parseJSON(jsonString) {
+  try {
+    return JSON.parse(jsonString);
+  } catch (error) {
+    return null;
+  }
+}
+
+function validateName(name) {
+  if (typeof name !== "string" || name.length < 2 || name.length > 80) {
+    return null;
+  }
+
+  return name;
+}
+
+function showError(message) {
+  errorMessageEl.textContent = message;
+  errorModal.classList.add("modal_visible");
+}
+
 function handleDeckSubmit(e) {
   e.preventDefault();
 
   const formData = new FormData(e.target);
   const data = Object.fromEntries(formData.entries());
 
-  const jsonData = JSON.parse(data.deckJson);
+  // Parse the submitted JSON.
+  const jsonData = parseJSON(data.deckJson);
+
+  // Validate JSON syntax.
+  if (jsonData === null) {
+    showError("JSON parsing failed. Please check your JSON syntax.");
+    return;
+  }
+
+  // Validate the deck name.
+  if (validateName(jsonData.name) === null) {
+    showError("The deck name must be a string between 2 and 80 characters.");
+    return;
+  }
+
+  // Validate the cards array.
+  if (!Array.isArray(jsonData.cards)) {
+    showError("The cards field is required and must contain an array.");
+    return;
+  }
+
+  // Normalize the selected color.
   const color = normalizeColor(data.color);
+
+  // Check for a color mismatch.
+  if (
+    typeof jsonData.color === "string" &&
+    jsonData.color.toLowerCase() !== color
+  ) {
+    showError(
+      `The JSON color (${jsonData.color}) does not match the selected deck color (${color}).`,
+    );
+    return;
+  }
+
+  // Create the deck only after all validation succeeds.
   const id = `${slugify(jsonData.name)}-${Date.now()}`;
 
   const newDeck = {

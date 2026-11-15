@@ -129,6 +129,57 @@
   cursor: not-allowed;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  max-width: calc(100vw - 40px);
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffafa8;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+.modal_visible {
+  display: block;
+}
+
+.modal__title {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 120%;
+  font-style: bold;
+}
+
+.modal__error {
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 120%;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+.modal__close-btn {
+  display: block;
+  margin-left: auto;
+  padding: 0 15px;
+  min-height: 42px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 135%;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 600px) {
   .new-deck-view__title {
     font-size: 32px;
