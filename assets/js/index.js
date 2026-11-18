@@ -23,6 +23,12 @@ practiceBtn.addEventListener("click", () => {
   }
 });
 
+/**
+ * Builds a gallery entry with a deck link, card count, and API-backed delete control.
+ *
+ * @param {import("./decks.js").Deck} item - The deck to display and link to.
+ * @returns {DocumentFragment} The populated clone of the deck template.
+ */
 function createDeckEl(item) {
   const template = document.querySelector("#deck-template");
   const clone = template.content.cloneNode(true);
@@ -56,12 +62,23 @@ function createDeckEl(item) {
   return clone;
 }
 
+/**
+ * Prepends a deck entry to the home gallery list.
+ *
+ * @param {import("./decks.js").Deck} item - The deck to add to the list.
+ * @returns {void} No value; updates the gallery in place.
+ */
 function renderDeckEl(item) {
   const deckList = document.querySelector(".gallery__list");
   const deckEl = createDeckEl(item);
   deckList.prepend(deckEl);
 }
 
+/**
+ * Shows My Decks and rebuilds the gallery from the decks held in memory.
+ *
+ * @returns {void} No value; updates the page in place.
+ */
 function renderDecksView() {
   decksSection.style.display = "block";
   deckViewSection.style.display = "none";
@@ -78,6 +95,11 @@ function renderDecksView() {
   fetchedDecks.forEach(renderDeckEl);
 }
 
+/**
+ * Shows the About section, hides the other views, and clears the carousel layout.
+ *
+ * @returns {void} No value; updates the page in place.
+ */
 function renderAboutView() {
   decksSection.style.display = "none";
   deckViewSection.style.display = "none";
@@ -89,6 +111,12 @@ function renderAboutView() {
   pageMainContent.classList.remove("page__main-content_location_carousel");
 }
 
+/**
+ * Renders the view selected by the URL hash. Falls back to My Decks and
+ * shows an error when the route is unknown or its deck cannot be found.
+ *
+ * @returns {void} No value; reads the current URL and updates the page.
+ */
 function router() {
   const hash = window.location.hash.slice(1) || "home";
   const [view, deckId] = hash.split("/");

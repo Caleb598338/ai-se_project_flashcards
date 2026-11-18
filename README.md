@@ -15,6 +15,9 @@ each of which can be viewed in a carousel, and a gallery view of all of the card
 - Card flipping to see the back of the cards.
 - A new deck view where new decks can be added in JSON format.
 - Responsive design.
+- Error handling and an error modal that displays when an error is caught.
+- The ability to retrieve, add, and delete decks from a database via a remote API.
+- JSDoc documentation for all named functions.
 
 ## Technologies used
 
@@ -26,7 +29,7 @@ each of which can be viewed in a carousel, and a gallery view of all of the card
 
 Check out this flash card web application at https://caleb598338.github.io/ai-se_project_flashcards/ on GitHub Pages.
 
- ## Project Pitch Video
- 
- Check out Caleb_Widner_ProjectPitch_Flashcard_Application at https://drive.google.com/file/d/1k3K3ngnnvyzp7NL7SPEN4_NT9WtJMZSQ/view?usp=drive_link, where I describe my 
- project and some challenges I faced while building it.
+## Project Pitch Video
+
+Check out Caleb_Widner_ProjectPitch_Flashcard_Application at https://drive.google.com/file/d/1k3K3ngnnvyzp7NL7SPEN4_NT9WtJMZSQ/view?usp=drive_link, where I describe my
+project and some challenges I faced while building it.

@@ -9,12 +9,10 @@ const colorMap = {
 };
 
 /**
- * Returns a hexadecimal string corresponding to the provided color name
- * string. If it isn't found in the colorMap object, colorMap.default is
- * returned.
+ * Looks up a palette color by name, falling back to the default green.
  *
- * @param {string} colorName
- * @returns a hexadecimal string
+ * @param {string} colorName - The palette key to look up.
+ * @returns {string} The matching hex color or the default hex color.
  */
 function stringToHex(colorName) {
   const color = colorMap[colorName];
@@ -23,11 +21,10 @@ function stringToHex(colorName) {
 }
 
 /**
- * Accepts a hexadecimal string and returns the corresponding color name key,
- * if found in colorMap. If a match isn't found, null is returned.
+ * Finds the first palette key whose hex value exactly matches the input.
  *
- * @param {string} hexValue
- * @returns a color name string
+ * @param {string} hexValue - The hex value to match, including its leading `#`.
+ * @returns {string|null} The matching palette key, or `null` if none matches.
  */
 function hexToString(hexValue) {
   const colorString = Object.keys(colorMap).find((key) => {
@@ -38,10 +35,10 @@ function hexToString(hexValue) {
 }
 
 /**
- * Accepts an HTML element and removes all BEM "_color_" modifiers from its
- * class list.
+ * Removes every CSS class containing `_color_` from an element.
  *
- * @param {HTMLElement} element
+ * @param {HTMLElement} element - The element whose class list is modified.
+ * @returns {void} No value; modifies the element in place.
  */
 function removeColorClasses(element) {
   [...element.classList].forEach((cls) => {

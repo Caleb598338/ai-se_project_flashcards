@@ -6,6 +6,13 @@ const newDeckSection = document.querySelector("#new-deck-view");
 const carouselSection = document.querySelector("#carousel");
 const aboutSection = document.querySelector("#about");
 
+/**
+ * Builds a flashcard for the deck view and wires its flip and local delete controls.
+ *
+ * @param {import("./decks.js").Flashcard} card - The flashcard to display.
+ * @param {import("./decks.js").Deck} deck - The parent deck, used for the card color and in-memory deletion.
+ * @returns {DocumentFragment} The populated clone of the card template.
+ */
 function createCardEl(card, deck) {
   const template = document.querySelector("#card-template");
   const clone = template.content.cloneNode(true);
@@ -40,6 +47,12 @@ function createCardEl(card, deck) {
   return clone;
 }
 
+/**
+ * Shows the deck view and rebuilds its card list for the selected deck.
+ *
+ * @param {import("./decks.js").Deck} deck - The deck whose title and cards are displayed.
+ * @returns {void} No value; updates the deck view in place.
+ */
 function renderDeckView(deck) {
   decksSection.style.display = "none";
   deckViewSection.style.display = "block";

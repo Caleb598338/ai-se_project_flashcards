@@ -22,6 +22,11 @@ errorCloseBtn.addEventListener("click", () => {
   errorModal.classList.remove("modal_visible");
 });
 
+/**
+ * Shows the new-deck form and hides the other views.
+ *
+ * @returns {void} No value; updates the page in place.
+ */
 function renderNewDeckView() {
   decksSection.style.display = "none";
   deckViewSection.style.display = "none";
@@ -30,6 +35,11 @@ function renderNewDeckView() {
   aboutSection.style.display = "none";
 }
 
+/**
+ * Enables the new-deck submit button by clearing its disabled state.
+ *
+ * @returns {void} No value; updates the button in place.
+ */
 function disableSubmitBtn() {
   submitBtn.disabled = false;
 }
@@ -37,12 +47,10 @@ function disableSubmitBtn() {
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
 
 /**
- * Returns a consistent lowercase hex color string with a leading "#".
- * Accepts values with or without a leading "#". Returns "#64d583" as a
- * fallback if the value is missing or not a valid 6-digit hex.
+ * Normalizes a six-digit hex color to lowercase with a leading `#`.
  *
- * @param {string|undefined} color
- * @returns {string}
+ * @param {string} [color] - Hex digits with or without a leading `#`.
+ * @returns {string} The normalized color, or `#64d583` if omitted or invalid.
  */
 function normalizeColor(color) {
   if (!color) return "#64d583";
@@ -51,6 +59,13 @@ function normalizeColor(color) {
   return "#" + hex.toLowerCase();
 }
 
+/**
+ * Parses JSON text without propagating parsing errors.
+ *
+ * @param {string} jsonString - The text to parse.
+ * @returns {object|string|number|boolean|null} The parsed value, including
+ * arrays and `null`, or `null` if parsing fails.
+ */
 function parseJSON(jsonString) {
   try {
     return JSON.parse(jsonString);
@@ -59,6 +74,12 @@ function parseJSON(jsonString) {
   }
 }
 
+/**
+ * Checks whether a deck name is a string between 2 and 80 characters long.
+ *
+ * @param {unknown} name - The candidate name from the submitted data.
+ * @returns {string|null} The unchanged name if valid, otherwise `null`.
+ */
 function validateName(name) {
   if (typeof name !== "string" || name.length < 2 || name.length > 80) {
     return null;
@@ -67,11 +88,25 @@ function validateName(name) {
   return name;
 }
 
+/**
+ * Displays a message in the error modal and opens it.
+ *
+ * @param {string|Error} message - The message or error to display as text.
+ * @returns {void} No value; updates the modal in place.
+ */
 function showError(message) {
   errorMessageEl.textContent = message;
   errorModal.classList.add("modal_visible");
 }
 
+/**
+ * Prevents native form submission, validates the deck data, and saves it via
+ * the API. On success, adds the saved deck to the in-memory list and opens it;
+ * validation or request failures are displayed in the error modal.
+ *
+ * @param {SubmitEvent} e - The submit event from the new-deck form.
+ * @returns {void} No value; the asynchronous save is handled internally.
+ */
 function handleDeckSubmit(e) {
   e.preventDefault();
 
