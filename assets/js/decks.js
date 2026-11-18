@@ -1,3 +1,5 @@
+const fetchedDecks = [];
+
 const decks = [
   {
     id: "html-basics",
@@ -766,7 +768,7 @@ const decks = [
  * @returns {object|undefined} The deck object if found, undefined otherwise
  */
 function getDeckByID(deckId) {
-  return decks.find((deck) => deck.id === deckId);
+  return fetchedDecks.find((deck) => deck._id === deckId);
 }
 
-export { decks, getDeckByID };
+export { decks, getDeckByID, fetchedDecks };

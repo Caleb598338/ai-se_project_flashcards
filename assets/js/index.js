@@ -1,8 +1,13 @@
-import { decks, getDeckByID } from "./decks.js";
+import { decks, getDeckByID, fetchedDecks } from "./decks.js";
 import { hexToString, removeColorClasses } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
 import { renderDeckView } from "./deck-view.js";
-import { renderNewDeckView, disableSubmitBtn } from "./new-deck-view.js";
+import {
+  renderNewDeckView,
+  disableSubmitBtn,
+  showError,
+} from "./new-deck-view.js";
+import { getDecks } from "./api.js";
 
 const decksSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
@@ -14,7 +19,7 @@ let currentDeck = null;
 
 practiceBtn.addEventListener("click", () => {
   if (currentDeck) {
-    window.location.hash = `#carousel/${currentDeck.id}`;
+    window.location.hash = `#carousel/${currentDeck._id}`;
   }
 });
 
@@ -30,12 +35,12 @@ function createDeckEl(item) {
   const countEl = clone.querySelector(".card__count");
   countEl.textContent = `${item.cards.length} cards`;
   const deckLink = clone.querySelector(".card__link");
-  deckLink.href = `#deck/${item.id}`;
+  deckLink.href = `#deck/${item._id}`;
   deckLink.setAttribute("aria-label", `Open ${item.name}`);
 
   const deleteBtn = clone.querySelector(".card__delete-btn");
   deleteBtn.addEventListener("click", () => {
-    const index = decks.findIndex((deck) => deck.id === item.id);
+    const index = decks.findIndex((deck) => deck._id === item._id);
     if (index !== -1) {
       decks.splice(index, 1);
     }
@@ -64,7 +69,7 @@ function renderDecksView() {
   const deckList = document.querySelector(".gallery__list");
   deckList.innerHTML = "";
 
-  decks.forEach(renderDeckEl);
+  fetchedDecks.forEach(renderDeckEl);
 }
 
 function renderNotFoundView() {
@@ -109,5 +114,12 @@ function router() {
   }
 }
 
-window.addEventListener("DOMContentLoaded", router);
+window.addEventListener("DOMContentLoaded", () => {
+  getDecks()
+    .then((decks) => {
+      fetchedDecks.push(...decks);
+    })
+    .catch(showError)
+    .finally(router);
+});
 window.addEventListener("hashchange", router);
