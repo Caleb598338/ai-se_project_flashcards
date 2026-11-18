@@ -6,7 +6,7 @@ let showingQuestion = true;
 const decksSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
 const carouselSection = document.querySelector("#carousel");
-const notFoundSection = document.querySelector("#not-found");
+const aboutSection = document.querySelector("#about");
 
 function getCarouselTitleString(deck, currentIndex) {
   return `${deck.name} · ${currentIndex + 1}/${deck.cards.length}`;
@@ -30,7 +30,7 @@ function renderCarouselView(deck) {
   decksSection.style.display = "none";
   deckViewSection.style.display = "none";
   carouselSection.style.display = "grid";
-  notFoundSection.style.display = "none";
+  aboutSection.style.display = "none";
 
   const pageMainContent = document.querySelector(".page__main-content");
   const titleEl = carouselSection.querySelector(".carousel__title");

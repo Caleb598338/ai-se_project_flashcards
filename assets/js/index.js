@@ -13,7 +13,7 @@ const decksSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
 const newDeckSection = document.querySelector("#new-deck-view");
 const carouselSection = document.querySelector("#carousel");
-const notFoundSection = document.querySelector("#not-found");
+const aboutSection = document.querySelector("#about");
 const practiceBtn = document.querySelector(".gallery__practice-button");
 let currentDeck = null;
 
@@ -67,7 +67,7 @@ function renderDecksView() {
   deckViewSection.style.display = "none";
   newDeckSection.style.display = "none";
   carouselSection.style.display = "none";
-  notFoundSection.style.display = "none";
+  aboutSection.style.display = "none";
 
   const pageMainContent = document.querySelector(".page__main-content");
   pageMainContent.classList.remove("page__main-content_location_carousel");
@@ -78,12 +78,12 @@ function renderDecksView() {
   fetchedDecks.forEach(renderDeckEl);
 }
 
-function renderNotFoundView() {
+function renderAboutView() {
   decksSection.style.display = "none";
   deckViewSection.style.display = "none";
   newDeckSection.style.display = "none";
   carouselSection.style.display = "none";
-  notFoundSection.style.display = "flex";
+  aboutSection.style.display = "block";
 
   const pageMainContent = document.querySelector(".page__main-content");
   pageMainContent.classList.remove("page__main-content_location_carousel");
@@ -101,22 +101,25 @@ function router() {
       currentDeck = deck;
       renderDeckView(deck);
     } else {
-      renderNotFoundView();
+      renderDecksView();
+      showError("Deck not found.");
     }
   } else if (view === "carousel") {
     const deck = getDeckByID(deckId);
     if (deck) {
       renderCarouselView(deck);
     } else {
-      renderNotFoundView();
+      renderDecksView();
+      showError("Deck not found.");
     }
   } else if (view === "new-deck-view") {
     renderNewDeckView();
     disableSubmitBtn();
   } else if (view === "about") {
-    renderNotFoundView();
+    renderAboutView();
   } else {
-    renderNotFoundView();
+    renderDecksView();
+    showError("Page not found.");
   }
 }
 

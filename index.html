@@ -139,9 +139,32 @@
         </div>
       </section>
 
-      <section id="not-found" class="not-found">
-        <h2 class="not-found__status-code">404</h2>
-        <p class="not-found__text">Sorry, nothing found!</p>
+      <section class="about" id="about">
+        <h2 class="about__title">About Flash Cards</h2>
+
+        <p class="about__description">
+          A flashcard application designed to make learning and studying easier.
+          The following is an example of how to structure a deck when submitting
+          it:
+        </p>
+
+        <pre class="about__code"><code>
+          &lt;!-- Example JSON structure for a deck --&gt;
+          {
+            "name": "Sample Deck",
+            "color": "#64D583",
+            "cards": [
+              {
+                "front": "Question 1",
+                "back": "Answer 1"
+              },
+              {
+                "front": "Question 2",
+                "back": "Answer 2"
+              }
+            ]
+          }
+        </code></pre>
       </section>
 
       <section class="new-deck-view" id="new-deck-view">

@@ -4,7 +4,7 @@ import { addDeck } from "./api.js";
 const deckViewSection = document.querySelector("#deck-view");
 const decksSection = document.querySelector("#home");
 const carouselSection = document.querySelector("#carousel");
-const notFoundSection = document.querySelector("#not-found");
+const aboutSection = document.querySelector("#about");
 const newDeckSection = document.querySelector("#new-deck-view");
 const newDeckBtn = document.querySelector("#home .gallery__new-card-btn");
 const form = document.querySelector(".new-deck-view__form");
@@ -27,7 +27,7 @@ function renderNewDeckView() {
   deckViewSection.style.display = "none";
   newDeckSection.style.display = "flex";
   carouselSection.style.display = "none";
-  notFoundSection.style.display = "none";
+  aboutSection.style.display = "none";
 }
 
 function disableSubmitBtn() {

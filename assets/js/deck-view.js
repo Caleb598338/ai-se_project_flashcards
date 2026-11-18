@@ -4,7 +4,7 @@ const deckViewSection = document.querySelector("#deck-view");
 const decksSection = document.querySelector("#home");
 const newDeckSection = document.querySelector("#new-deck-view");
 const carouselSection = document.querySelector("#carousel");
-const notFoundSection = document.querySelector("#not-found");
+const aboutSection = document.querySelector("#about");
 
 function createCardEl(card, deck) {
   const template = document.querySelector("#card-template");
@@ -45,7 +45,7 @@ function renderDeckView(deck) {
   deckViewSection.style.display = "block";
   newDeckSection.style.display = "none";
   carouselSection.style.display = "none";
-  notFoundSection.style.display = "none";
+  aboutSection.style.display = "none";
 
   const titleEl = deckViewSection.querySelector(".gallery__title");
   const cardList = deckViewSection.querySelector(".gallery__list");
