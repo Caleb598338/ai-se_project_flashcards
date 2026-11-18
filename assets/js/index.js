@@ -1,4 +1,4 @@
-import { decks, getDeckByID, fetchedDecks } from "./decks.js";
+import { getDeckByID, fetchedDecks } from "./decks.js";
 import { hexToString, removeColorClasses } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
 import { renderDeckView } from "./deck-view.js";
@@ -7,7 +7,7 @@ import {
   disableSubmitBtn,
   showError,
 } from "./new-deck-view.js";
-import { getDecks } from "./api.js";
+import { getDecks, deleteDeck } from "./api.js";
 
 const decksSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
@@ -40,11 +40,17 @@ function createDeckEl(item) {
 
   const deleteBtn = clone.querySelector(".card__delete-btn");
   deleteBtn.addEventListener("click", () => {
-    const index = decks.findIndex((deck) => deck._id === item._id);
-    if (index !== -1) {
-      decks.splice(index, 1);
-    }
-    deckEl.remove();
+    deleteDeck(item._id)
+      .then(() => {
+        const index = fetchedDecks.findIndex((deck) => deck._id === item._id);
+
+        if (index !== -1) {
+          fetchedDecks.splice(index, 1);
+        }
+
+        deckEl.remove();
+      })
+      .catch(showError);
   });
 
   return clone;
@@ -116,8 +122,8 @@ function router() {
 
 window.addEventListener("DOMContentLoaded", () => {
   getDecks()
-    .then((decks) => {
-      fetchedDecks.push(...decks);
+    .then((apiDecks) => {
+      fetchedDecks.push(...apiDecks);
     })
     .catch(showError)
     .finally(router);

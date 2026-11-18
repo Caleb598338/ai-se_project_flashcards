@@ -1,4 +1,5 @@
-import { decks } from "./decks.js";
+import { fetchedDecks } from "./decks.js";
+import { addDeck } from "./api.js";
 
 const deckViewSection = document.querySelector("#deck-view");
 const decksSection = document.querySelector("#home");
@@ -34,22 +35,6 @@ function disableSubmitBtn() {
 }
 
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
-
-/**
- * Converts a string to a URL-safe slug: lowercase with any run of
- * non-alphanumeric characters replaced by a single hyphen, and no leading or
- * trailing hyphens.
- *
- * @param {string} str
- * @returns {string}
- */
-function slugify(str) {
-  return str
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 /**
  * Returns a consistent lowercase hex color string with a leading "#".
@@ -129,18 +114,17 @@ function handleDeckSubmit(e) {
   }
 
   // Create the deck only after all validation succeeds.
-  const id = `${slugify(jsonData.name)}-${Date.now()}`;
-
-  const newDeck = {
-    id: id,
-    color: color,
+  addDeck({
     name: jsonData.name,
+    color: color,
     cards: jsonData.cards,
-  };
+  })
+    .then((newDeck) => {
+      fetchedDecks.push(newDeck);
 
-  decks.push(newDeck);
-
-  window.location.hash = "deck/" + id;
+      window.location.hash = "deck/" + newDeck._id;
+    })
+    .catch(showError);
 }
 
 form.addEventListener("submit", handleDeckSubmit);
